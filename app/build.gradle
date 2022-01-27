@@ -36,7 +36,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion Compose.version
     }
     packagingOptions {
         resources {
@@ -47,6 +47,7 @@ android {
 
 dependencies {
 
+    def compose_version = Compose.version
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
