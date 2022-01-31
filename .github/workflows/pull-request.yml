@@ -13,8 +13,8 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: run unit tests
-        run: ./gradlew test
+      - name: run checks
+        run: ./gradlew check
 
 
   instrumented-tests:
