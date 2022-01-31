@@ -2,7 +2,7 @@ name: Pull request
 on: [ pull_request ]
 jobs:
   initial-checks:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
