@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Android.GradlePlugin.application)
+    id(Kotlin.GradlePlugin.android)
     id(Detekt.gradlePlugin)
 }
 
@@ -55,6 +55,11 @@ android {
     }
 }
 
+detekt {
+    autoCorrect = true
+    config = files("${rootDir}/detekt.yml")
+}
+
 dependencies {
     // Core
     implementation(Core.coreKtx)
@@ -68,6 +73,8 @@ dependencies {
     androidTestImplementation(Compose.uiTestJunit4)
     debugImplementation(Compose.uiTooling)
 
+    // Plugins
+    detektPlugins(Detekt.formatting)
 
     // Testing
     testImplementation(Junit.junit)
