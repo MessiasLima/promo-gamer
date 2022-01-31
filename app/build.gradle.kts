@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // id(Detekt.gradlePlugin)
+    id(Detekt.gradlePlugin)
 }
 
 android {
