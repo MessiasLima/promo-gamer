@@ -22,6 +22,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            isTestCoverageEnabled = true
+            testCoverage {
+                jacocoVersion = "0.8.7"
+            }
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -83,6 +90,7 @@ dependencies {
     implementation(Compose.uiToolingPreview)
     androidTestImplementation(Compose.uiTestJunit4)
     debugImplementation(Compose.uiTooling)
+    debugImplementation(Compose.uiTestManifest)
 
     // Plugins
     detektPlugins(Detekt.formatting)
