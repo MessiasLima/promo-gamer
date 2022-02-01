@@ -6,4 +6,5 @@ object Compose {
     const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$version"
     const val uiTooling = "androidx.compose.ui:ui-tooling:$version"
     const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4:$version"
+    const val uiTestManifest = "androidx.compose.ui:ui-test-manifest:$version"
 }
