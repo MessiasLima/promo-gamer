@@ -57,7 +57,18 @@ android {
 
 detekt {
     autoCorrect = true
+    source = files(
+        "src/main/java",
+        "src/test/java",
+        "src/androidTest/java",
+        "src/main/kotlin",
+        "src/test/kotlin",
+        "src/androidTest/kotlin",
+        "${rootDir}/buildSrc/src/main/kotlin"
+    )
     config = files("${rootDir}/detekt.yml")
+    parallel = true
+    buildUponDefaultConfig = true
 }
 
 dependencies {
