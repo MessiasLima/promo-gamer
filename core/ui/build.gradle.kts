@@ -1,6 +1,7 @@
 plugins {
     id(Android.GradlePlugin.library)
     id(Kotlin.GradlePlugin.android)
+    id(Detekt.gradlePlugin)
 }
 
 android {
@@ -35,11 +36,24 @@ android {
 }
 
 dependencies {
+    // Core
+    implementation(Core.coreKtx)
+    implementation(Activity.compose)
+    implementation(Lifecycle.runtimeKtx)
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    // Compose
+    implementation(Compose.ui)
+    implementation(Compose.material)
+    implementation(Compose.uiToolingPreview)
+    androidTestImplementation(Compose.uiTestJunit4)
+    debugImplementation(Compose.uiTooling)
+    debugImplementation(Compose.uiTestManifest)
+
+    // Plugins
+    detektPlugins(Detekt.formatting)
+
+    // Testing
+    testImplementation(Junit.junit)
+    androidTestImplementation(Test.Ext.junit)
+    androidTestImplementation(Test.Espresso.core)
 }
