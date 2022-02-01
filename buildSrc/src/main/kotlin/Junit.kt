@@ -1,3 +1,4 @@
+@Suppress("MemberNameEqualsClassName")
 object Junit {
     private const val version = "4.13.2"
 

@@ -1,0 +1,42 @@
+name: Pull request
+on: [ pull_request ]
+jobs:
+  initial-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: run checks
+        run: ./gradlew check --stacktrace --no-daemon --parallel --console=rich
+
+
+  instrumented-tests:
+    runs-on: macos-latest
+    needs: initial-checks
+    strategy:
+      matrix:
+        api-level: [26, 31]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Instrumentation Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          profile: Galaxy Nexus
+          api-level: ${{ matrix.api-level }}
+          arch: x86_64
+          script: ./gradlew connectedCheck --stacktrace --no-daemon --parallel --console=rich
