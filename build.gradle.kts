@@ -4,6 +4,7 @@ plugins {
     id(Kotlin.GradlePlugin.android) version Kotlin.GradlePlugin.androidVersion apply false
     id(Detekt.gradlePlugin) version Detekt.version
     id("dependency-updater")
+    id("git-hooks")
 }
 
 tasks.register("clean").configure {
