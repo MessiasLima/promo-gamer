@@ -1,0 +1,26 @@
+apply plugin: Android.gradlePlugin.library
+apply plugin: Kotlin.gradlePlugin.android
+
+apply from: "$rootDir/script/detekt.gradle"
+apply from: "$rootDir/script/module/android-setup.gradle"
+
+android {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.version
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    implementation(Core.coreKtx)
+    testImplementation(Junit.junit)
+}

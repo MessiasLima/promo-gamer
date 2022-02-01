@@ -17,5 +17,5 @@ dependencyResolutionManagement {
 rootProject.name = "PromoGamer"
 
 include(":app")
-
 include(":core:ui")
+include(":feature:splash")
