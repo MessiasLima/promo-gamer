@@ -3,7 +3,7 @@ plugins {
     id(Kotlin.GradlePlugin.android)
 }
 
-apply(from = "$rootDir/detekt.gradle")
+apply(from = "$rootDir/script/detekt.gradle")
 
 android {
     compileSdk = Android.compileSdk
