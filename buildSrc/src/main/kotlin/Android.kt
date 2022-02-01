@@ -9,6 +9,7 @@ object Android {
         const val name = "2.0.0"
     }
 
+    val gradlePlugin = GradlePlugin
     object GradlePlugin {
         const val version = "7.1.0"
         const val application = "com.android.application"

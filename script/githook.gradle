@@ -1,6 +1,4 @@
-plugins {
-    id("com.star-zero.gradle.githook")
-}
+apply plugin: "com.star-zero.gradle.githook"
 
 githook {
     failOnMissingHooksDir = true
