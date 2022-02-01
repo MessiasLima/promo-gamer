@@ -5,6 +5,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import com.messiaslima.promogamer.ui.theme.PromoGamerColors.Purple200
+import com.messiaslima.promogamer.ui.theme.PromoGamerColors.Purple500
+import com.messiaslima.promogamer.ui.theme.PromoGamerColors.Purple700
+import com.messiaslima.promogamer.ui.theme.PromoGamerColors.Teal200
 
 private val DarkColorPalette = darkColors(
     primary = Purple200,
