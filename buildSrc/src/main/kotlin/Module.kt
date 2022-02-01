@@ -4,4 +4,10 @@ object Module {
 
         const val ui = "$path:ui"
     }
+
+    object Feature {
+        private const val path = ":feature"
+
+        const val splash = "$path:splash"
+    }
 }

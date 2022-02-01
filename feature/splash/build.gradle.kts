@@ -4,3 +4,9 @@ plugins {
 }
 
 apply(from = "$rootDir/script/module/feature.gradle")
+
+dependencies {
+    implementation(Activity.compose)
+
+    implementation(project(Module.Core.ui))
+}

@@ -10,9 +10,20 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled = true
+            testCoverage {
+                jacocoVersion = "0.8.7"
+            }
+        }
+
         release {
             minifyEnabled = false
             proguardFiles(

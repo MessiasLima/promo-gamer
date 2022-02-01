@@ -84,4 +84,5 @@ dependencies {
 
     // Modules
     implementation(project(Module.Core.ui))
+    implementation(project(Module.Feature.splash))
 }
