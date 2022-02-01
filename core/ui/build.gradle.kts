@@ -3,36 +3,21 @@ plugins {
     id(Kotlin.GradlePlugin.android)
 }
 
-apply(from = "$rootDir/script/detekt.gradle")
+apply(from = "$rootDir/script/module/core.gradle")
 
 android {
-    compileSdk = Android.compileSdk
-
-    defaultConfig {
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+    buildFeatures {
+        compose = true
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.version
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -51,7 +36,6 @@ dependencies {
     debugImplementation(Compose.uiTestManifest)
 
     // Testing
-    testImplementation(Junit.junit)
     androidTestImplementation(Test.Ext.junit)
     androidTestImplementation(Test.Espresso.core)
 }

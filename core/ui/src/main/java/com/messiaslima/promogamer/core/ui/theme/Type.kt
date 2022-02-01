@@ -1,4 +1,4 @@
-package com.messiaslima.promogamer.ui.theme
+package com.messiaslima.promogamer.core.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
