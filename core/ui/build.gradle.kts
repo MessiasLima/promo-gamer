@@ -1,14 +1,14 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(Android.GradlePlugin.library)
+    id(Kotlin.GradlePlugin.android)
 }
 
 android {
-    compileSdk = 31
+    compileSdk = Android.compileSdk
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 31
+        minSdk = Android.minSdk
+        targetSdk = Android.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
