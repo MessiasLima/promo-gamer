@@ -1,0 +1,19 @@
+apply plugin: DependencyUpdater.gradlePlugin
+
+def isNonStable = { String version ->
+    def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
+
+def isOnIgnoreList = { String module ->
+    return ["jacoco", "android.gradle.plugin"].any {it ->
+        module.toLowerCase().contains(it)
+    }
+}
+
+tasks.named("dependencyUpdates").configure {
+    rejectVersionIf {
+        isNonStable(it.candidate.version) || isOnIgnoreList(it.candidate.module)
+    }
+}
