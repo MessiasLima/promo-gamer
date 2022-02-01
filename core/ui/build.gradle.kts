@@ -3,6 +3,8 @@ plugins {
     id(Kotlin.GradlePlugin.android)
 }
 
+apply(from = "$rootDir/detekt.gradle")
+
 android {
     compileSdk = Android.compileSdk
 
@@ -33,8 +35,6 @@ android {
         jvmTarget = "1.8"
     }
 }
-
-apply(from = "$rootDir/detekt.gradle")
 
 dependencies {
     // Core
