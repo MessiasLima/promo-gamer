@@ -28,10 +28,21 @@ android {
             testCoverage {
                 jacocoVersion = "0.8.7"
             }
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
+
+        create("minifiedDebug") {
+            isDebuggable = true
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = true
+            applicationIdSuffix = ".minified"
+            versionNameSuffix = "-minified"
         }
 
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
