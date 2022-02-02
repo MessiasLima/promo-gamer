@@ -21,12 +21,20 @@ android {
 }
 
 dependencies {
+    // Core
+    implementation(Core.coreKtx)
+
+    // Compose
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.uiToolingPreview)
-    implementation(Lifecycle.runtimeKtx)
+    implementation(Compose.uiTooling)
     androidTestImplementation(Compose.uiTestJunit4)
-    debugImplementation(Compose.uiTooling)
-    implementation(Core.coreKtx)
+
+    // Misc
+    implementation(Lifecycle.runtimeKtx)
+    implementation(Lifecycle.viewModelCompose)
+
+    // Testing
     testImplementation(Junit.junit)
 }

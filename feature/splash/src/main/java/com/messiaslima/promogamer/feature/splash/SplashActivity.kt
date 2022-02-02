@@ -1,7 +1,6 @@
 package com.messiaslima.promogamer.feature.splash
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,9 +16,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 import com.messiaslima.promogamer.feature.splash.ui.PromoGamerSplashTheme
 
@@ -36,33 +35,38 @@ class SplashActivity : ComponentActivity() {
 }
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(viewModel: SplashViewModel = viewModel()) {
     Box(modifier = Modifier.fillMaxSize()) {
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter),
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Text(text = stringResource(id = R.string.loading_stores_data))
-
-                LinearProgressIndicator(
-                    modifier = Modifier
-                        .width(300.dp)
-                        .padding(top = 16.dp, bottom = 48.dp)
-                )
-            }
+            LoadingIndicator(message = viewModel.message)
         }
+    }
+}
+
+@Composable
+fun LoadingIndicator(message: String) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Text(text = message)
+
+        LinearProgressIndicator(
+            modifier = Modifier
+                .width(300.dp)
+                .padding(top = 16.dp, bottom = 48.dp)
+        )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun SplashScreenPreview() {
+fun LoadingIndicatorPreview() {
     PromoGamerTheme {
-        SplashScreen()
+        LoadingIndicator("Preview message")
     }
 }
