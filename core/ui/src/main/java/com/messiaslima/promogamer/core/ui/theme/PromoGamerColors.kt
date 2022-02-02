@@ -4,8 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 @Suppress("MagicNumber")
 object PromoGamerColors {
-    val Purple200 = Color(0xFFBB86FC)
-    val Purple500 = Color(0xFF6200EE)
-    val Purple700 = Color(0xFF3700B3)
-    val Teal200 = Color(0xFF03DAC5)
+    val Green = Color(0xFF2E9A0A)
+    val Purple = Color(0xFF3700B3)
+    val White = Color(0xFFFFFFFF)
 }
