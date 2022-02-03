@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -18,4 +20,5 @@ rootProject.name = "PromoGamer"
 
 include(":app")
 include(":core:ui")
+include(":core:network")
 include(":feature:splash")
