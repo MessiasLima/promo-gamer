@@ -15,4 +15,6 @@ dependencies {
     // Hilt
     implementation(Hilt.android)
     kapt(Hilt.compiler)
+
+    implementation(project(Module.Core.network_contract))
 }

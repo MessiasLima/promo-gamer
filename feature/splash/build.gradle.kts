@@ -9,5 +9,5 @@ dependencies {
     implementation(Activity.compose)
 
     implementation(project(Module.Core.ui))
-    implementation(project(Module.Core.network))
+    implementation(project(Module.Core.network_contract))
 }

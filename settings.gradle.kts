@@ -21,4 +21,5 @@ rootProject.name = "PromoGamer"
 include(":app")
 include(":core:ui")
 include(":core:network")
+include(":core:network_contract")
 include(":feature:splash")
