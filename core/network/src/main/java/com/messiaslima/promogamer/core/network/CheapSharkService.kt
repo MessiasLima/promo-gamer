@@ -19,7 +19,7 @@ interface CheapSharkService {
         @Query("upperPrice") upperPrice: Int? = null,
         @Query("metacritic") metacritic: Int? = null,
         @Query("steamRating") steamRating: Int? = null,
-        @Query("steamAppID") steamAppID: String? = null,
+        @Query("steamAppID") steamAppId: String? = null,
         @Query("title") title: String? = null,
         @Query("exact") exact: Int? = null,
         @Query("AAA") aaa: Int? = null,

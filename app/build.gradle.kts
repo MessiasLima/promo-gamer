@@ -101,5 +101,6 @@ dependencies {
 
     // Modules
     implementation(project(Module.Core.ui))
+    implementation(project(Module.Core.network))
     implementation(project(Module.Feature.splash))
 }

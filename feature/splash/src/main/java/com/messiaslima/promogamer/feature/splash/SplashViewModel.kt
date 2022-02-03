@@ -10,8 +10,4 @@ class SplashViewModel @Inject constructor(
     splashOrchestrator: SplashOrchestrator
 ) : ViewModel() {
     val message = "Sample message"
-
-    init {
-        Log.i(this::class.simpleName, splashOrchestrator.orchestratorMessage)
-    }
 }

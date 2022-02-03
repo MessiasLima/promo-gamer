@@ -3,6 +3,7 @@ object Module {
         private const val path = ":core"
 
         const val ui = "$path:ui"
+        const val network = "$path:network"
     }
 
     object Feature {
