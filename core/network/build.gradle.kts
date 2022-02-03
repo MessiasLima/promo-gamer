@@ -9,8 +9,8 @@ apply(from = "$rootDir/script/module/core.gradle")
 
 dependencies {
     // Retrofit
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.converterGson)
+    implementation(Retrofit2.retrofit)
+    implementation(Retrofit2.converterGson)
 
     // Hilt
     implementation(Hilt.android)
