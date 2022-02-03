@@ -1,6 +1,6 @@
 package com.messiaslima.promogamer.core.network
 
-import com.messiaslima.promogamer.network.contract.StoreService
+import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import com.messiaslima.promogamer.core.network.store.StoreServiceImpl
 import dagger.Binds
 import dagger.Module

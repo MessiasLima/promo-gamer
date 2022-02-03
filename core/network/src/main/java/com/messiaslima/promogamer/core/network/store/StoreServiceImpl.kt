@@ -1,8 +1,7 @@
 package com.messiaslima.promogamer.core.network.store
 
 import com.messiaslima.promogamer.core.network.CheapSharkService
-import com.messiaslima.promogamer.core.network.PromoGamerNetworkException
-import com.messiaslima.promogamer.network.contract.StoreService
+import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import javax.inject.Inject
 
 class StoreServiceImpl @Inject constructor(

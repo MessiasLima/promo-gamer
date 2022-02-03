@@ -1,7 +1,7 @@
 package com.messiaslima.promogamer.feature.splash
 
 import android.util.Log
-import com.messiaslima.promogamer.network.contract.StoreService
+import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
