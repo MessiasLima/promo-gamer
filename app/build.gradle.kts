@@ -1,6 +1,8 @@
 plugins {
     id(Android.GradlePlugin.application)
     id(Kotlin.GradlePlugin.android)
+    id(Kotlin.GradlePlugin.kapt)
+    id(Hilt.gradlePlugin.plugin)
 }
 
 apply(from = "$rootDir/script/detekt.gradle")
@@ -87,6 +89,10 @@ dependencies {
     androidTestImplementation(Compose.uiTestJunit4)
     debugImplementation(Compose.uiTooling)
     debugImplementation(Compose.uiTestManifest)
+
+    // Hilt
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
 
     // Testing
     testImplementation(Junit.junit)

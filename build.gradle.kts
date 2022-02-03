@@ -7,6 +7,12 @@ plugins {
     id(Detekt.gradlePlugin) version Detekt.version
 }
 
+buildscript {
+    dependencies {
+        classpath(Hilt.gradlePlugin.classpath)
+    }
+}
+
 apply(from = "$rootDir/script/githook.gradle")
 apply(from = "$rootDir/script/dependency-updater.gradle")
 

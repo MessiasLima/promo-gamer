@@ -21,7 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 import com.messiaslima.promogamer.feature.splash.ui.PromoGamerSplashTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
