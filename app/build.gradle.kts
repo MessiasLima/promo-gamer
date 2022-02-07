@@ -96,8 +96,8 @@ dependencies {
 
     // Testing
     testImplementation(Junit.junit)
-    androidTestImplementation(Test.Ext.junit)
-    androidTestImplementation(Test.Espresso.core)
+    androidTestImplementation(Testing.Ext.junit)
+    androidTestImplementation(Testing.Espresso.core)
 
     // Modules
     implementation(project(Module.Core.ui))

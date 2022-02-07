@@ -43,4 +43,6 @@ dependencies {
 
     // Testing
     testImplementation(Junit.junit)
+    androidTestImplementation(Testing.ext.junit)
+    androidTestImplementation(Testing.espresso.core)
 }
