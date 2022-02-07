@@ -1,4 +1,6 @@
 object Module {
+    const val domain = ":domain"
+
     object Core {
         private const val path = ":core"
 

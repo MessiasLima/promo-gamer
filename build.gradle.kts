@@ -5,6 +5,7 @@ plugins {
     id(GitHook.gradlePlugin) version GitHook.version apply false
     id(DependencyUpdater.gradlePlugin) version DependencyUpdater.version apply false
     id(Detekt.gradlePlugin) version Detekt.version
+    id("org.jetbrains.kotlin.jvm") version "1.6.10" apply false
 }
 
 buildscript {
