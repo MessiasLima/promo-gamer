@@ -2,7 +2,6 @@ package com.messiaslima.promogamer.core.network.store
 
 import com.appmattus.kotlinfixture.kotlinFixture
 import com.messiaslima.promogamer.core.network.CheapSharkService
-import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import com.messiaslima.promogamer.core.network.store.model.StoreResponse
 import com.messiaslima.promogamer.domain.Store
 import io.mockk.coEvery
@@ -14,11 +13,11 @@ import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
-import retrofit2.Response
+import retrofit2.Response as RetrofitResponse
 
 class StoreServiceImplTest {
     private val fixture = kotlinFixture()
-    private lateinit var storeService: StoreService
+    private lateinit var storeService: StoreServiceImpl
     private val mockCheapSharkService = mockk<CheapSharkService>()
 
     @Before
@@ -29,7 +28,7 @@ class StoreServiceImplTest {
     @Test
     fun `should get stores`() = runBlocking {
         val storeResponseList = fixture<List<StoreResponse>>()
-        val storeResponse = Response.success(storeResponseList)
+        val storeResponse = RetrofitResponse.success(storeResponseList)
         val expectedStores = fixture<List<Store>>()
 
         mockkStatic(List<StoreResponse>::toDomain)

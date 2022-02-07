@@ -21,7 +21,7 @@ fun List<StoreResponse>?.toDomain(): List<Store> {
 }
 
 fun StoreResponse.toDomain() = Store(
-    id = storeId?.toInt() ?: INVALID_ID,
+    id = storeId?.toIntOrNull() ?: INVALID_ID,
     name = storeName ?: INVALID_NAME,
     isActive = isActive == 1,
     logo = imagesResponse?.logo ?: INVALID_LOGO
