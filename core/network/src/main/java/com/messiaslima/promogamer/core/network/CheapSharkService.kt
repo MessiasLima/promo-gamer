@@ -1,7 +1,7 @@
 package com.messiaslima.promogamer.core.network
 
 import com.messiaslima.promogamer.core.network.deal.DealResponse
-import com.messiaslima.promogamer.core.network.store.StoreResponse
+import com.messiaslima.promogamer.core.network.store.model.StoreResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

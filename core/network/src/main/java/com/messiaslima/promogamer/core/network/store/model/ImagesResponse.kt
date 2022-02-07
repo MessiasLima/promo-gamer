@@ -1,4 +1,4 @@
-package com.messiaslima.promogamer.core.network.store
+package com.messiaslima.promogamer.core.network.store.model
 
 import com.google.gson.annotations.SerializedName
 
