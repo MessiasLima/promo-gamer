@@ -6,4 +6,6 @@ apply from: "$rootDir/script/module/android-setup.gradle"
 
 dependencies {
     testImplementation(Junit.junit)
+    testImplementation(MockK.mockK)
+    testImplementation(Fixture.kotlinFixture)
 }

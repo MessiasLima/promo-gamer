@@ -18,4 +18,6 @@ dependencies {
 
     implementation(project(Module.Core.network_contract))
     implementation(project(Module.domain))
+
+    testImplementation(Kotlin.coroutinesTest)
 }

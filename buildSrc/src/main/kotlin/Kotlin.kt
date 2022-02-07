@@ -1,4 +1,7 @@
 object Kotlin {
+    private const val coroutinesTestVersion = "1.5.2"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+
     val gradlePlugin = GradlePlugin
     object GradlePlugin {
         const val androidVersion = "1.5.31"
