@@ -76,6 +76,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     // Core
     implementation(Core.coreKtx)
