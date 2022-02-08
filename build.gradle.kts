@@ -6,6 +6,7 @@ plugins {
     id(DependencyUpdater.gradlePlugin) version DependencyUpdater.version apply false
     id(Detekt.gradlePlugin) version Detekt.version
     id(Kover.gradlePlugin) version Kover.version
+    id(Ksp.gradlePlugin) version Ksp.version
 }
 
 buildscript {

@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.8">
       <module name="PromoGamer.app" target="11" />
       <module name="PromoGamer.buildSrc" target="11" />
+      <module name="PromoGamer.core.database" target="11" />
       <module name="PromoGamer.core.network" target="11" />
       <module name="PromoGamer.core.ui" target="11" />
       <module name="PromoGamer.feature.splash" target="11" />
