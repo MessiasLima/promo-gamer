@@ -10,7 +10,7 @@ interface StoreDao {
     fun save(vararg users: StoreEntity)
 
     @Query("SELECT * FROM store")
-    fun findAll(): List<StoreEntity>
+    suspend fun findAll(): List<StoreEntity>
 
     @Query("SELECT * FROM store WHERE id = :id")
     fun findById(id: Int): StoreEntity

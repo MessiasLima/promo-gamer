@@ -19,8 +19,8 @@ dependencies {
     ksp(Room.compiler)
 
     // Modules
-    // implementation(project(Module.Core.network_contract))
     implementation(project(Module.domain))
+    implementation(project(Module.Core.database_contract))
 
     // Testing
     testImplementation(Kotlin.coroutinesTest)

@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SplashViewModel @Inject constructor(
-    // splashOrchestrator: SplashOrchestrator
+    splashOrchestrator: SplashOrchestrator
 ) : ViewModel() {
     val message = "Sample message"
 }
