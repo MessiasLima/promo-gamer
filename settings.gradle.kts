@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":domain")
-
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -22,7 +19,9 @@ dependencyResolutionManagement {
 rootProject.name = "PromoGamer"
 
 include(":app")
+include(":domain")
 include(":core:ui")
 include(":core:network")
 include(":core:network_contract")
+include(":core:database")
 include(":feature:splash")

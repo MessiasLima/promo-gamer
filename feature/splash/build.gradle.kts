@@ -10,4 +10,5 @@ dependencies {
 
     implementation(project(Module.Core.ui))
     implementation(project(Module.Core.network_contract))
+    implementation(project(Module.domain))
 }
