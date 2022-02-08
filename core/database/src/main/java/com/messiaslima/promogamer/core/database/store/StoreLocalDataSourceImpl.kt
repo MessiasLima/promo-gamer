@@ -7,7 +7,5 @@ import javax.inject.Inject
 class StoreLocalDataSourceImpl @Inject constructor(
     private val storeDao: StoreDao
 ) : StoreLocalDataSource {
-    override suspend fun findAll(): List<Store> {
-        return storeDao.findAll().toDomain()
-    }
+    override suspend fun findAll() = storeDao.findAll().toDomain()
 }
