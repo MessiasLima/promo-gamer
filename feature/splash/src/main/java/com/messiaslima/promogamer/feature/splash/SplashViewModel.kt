@@ -15,7 +15,10 @@ class SplashViewModel @Inject constructor(
 ) : ViewModel() {
     val uiState: Flow<UiState> = splashOrchestrator.getStores()
         .map<List<Store>, UiState> { UiState.Success }
-        .catch { emit(UiState.Error) }
+        .catch { throwable ->
+            throwable.printStackTrace()
+            emit(UiState.Error)
+        }
         .onStart { emit(UiState.Loading) }
 
     @Suppress("EmptyFunctionBlock")

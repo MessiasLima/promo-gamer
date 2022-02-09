@@ -49,7 +49,7 @@ class StoreResponseMapperTest {
             id = 1,
             name = validStoreResponse.storeName!!,
             isActive = true,
-            logo = validStoreResponse.imagesResponse!!.logo!!
+            logo = LOGO_HOST + validStoreResponse.imagesResponse!!.logo!!
         )
 
         assertThat(actual, equalTo(listOf(expected)))
