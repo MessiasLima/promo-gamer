@@ -11,8 +11,8 @@ private val DarkColorPalette = darkColors(
     primary = PromoGamerColors.White,
     primaryVariant = PromoGamerColors.White,
     secondary = PromoGamerColors.White,
-    onPrimary = PromoGamerColors.White,
-    onSecondary = PromoGamerColors.White,
+    onPrimary = PromoGamerColors.Green,
+    onSecondary = PromoGamerColors.Green,
     surface = PromoGamerColors.Green
 )
 

@@ -8,4 +8,10 @@ class StoreLocalDataSourceImpl @Inject constructor(
     private val storeDao: StoreDao
 ) : StoreLocalDataSource {
     override suspend fun findAll() = storeDao.findAll().toDomain()
+
+    @Suppress("SpreadOperator")
+    override suspend fun save(stores: List<Store>) {
+        val entities = stores.toEntity().toTypedArray()
+        storeDao.save(* entities)
+    }
 }

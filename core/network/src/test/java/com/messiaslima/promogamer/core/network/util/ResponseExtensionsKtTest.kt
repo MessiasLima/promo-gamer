@@ -4,7 +4,7 @@ import com.appmattus.kotlinfixture.kotlinFixture
 import com.messiaslima.promogamer.core.network.PromoGamerNetworkException
 import okhttp3.MediaType
 import okhttp3.ResponseBody
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Response
 

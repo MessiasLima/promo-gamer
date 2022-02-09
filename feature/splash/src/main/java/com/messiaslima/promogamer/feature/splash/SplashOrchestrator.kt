@@ -1,40 +1,32 @@
 package com.messiaslima.promogamer.feature.splash
 
-import android.util.Log
 import com.messiaslima.promogamer.core.database.contract.StoreLocalDataSource
 import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import com.messiaslima.promogamer.domain.Store
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 class SplashOrchestrator @Inject constructor(
     private val storeService: StoreService,
     private val storeLocalDataSource: StoreLocalDataSource,
 ) {
-    init {
-        Log.i("verification", "ver")
-    }
-
-    fun getStores() {
-        if (shouldGetStoresFromLocalCache()){
+    fun getStores(): Flow<List<Store>> {
+        return if (shouldGetStoresFromLocalCache()) {
             getStoresFromLocalCache()
         } else {
             getStoresFromServer()
         }
     }
 
-    private fun getStoresFromServer() {
-        flow<List<Store>> { storeService.getStores() }
-            .map { it }
-    }
+    private fun getStoresFromServer() = flow { emit(storeService.getStores()) }
+        .onEach { storeLocalDataSource.save(it) }
 
-    private fun getStoresFromLocalCache() {
-        // TODO get stores from database
-    }
+    private fun getStoresFromLocalCache() = flow { emit(storeLocalDataSource.findAll()) }
 
-
+    @Suppress("FunctionOnlyReturningConstant")
     private fun shouldGetStoresFromLocalCache(): Boolean {
-        TODO("verify on shared preferences")
+        return false
     }
 }

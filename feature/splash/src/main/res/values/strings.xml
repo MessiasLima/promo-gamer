@@ -1,4 +1,8 @@
 <resources>
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="loading_stores_data">Loading data from stores</string>
+    <string name="store_synchonization_loading">Loading data from stores</string>
+    <string name="store_synchonization_failure">PromoGamer was unable to update the stores data</string>
+    <string name="store_synchonization_success">Store data was successfully synchronized</string>
+    <string name="store_synchonization_try_again">Try again</string>
+    <string name="store_synchonization_close_app">Do it later</string>
 </resources>
