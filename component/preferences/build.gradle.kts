@@ -12,5 +12,11 @@ dependencies {
     implementation(Hilt.android)
     kapt(Hilt.compiler)
 
+    // DataStore
+    implementation(DataStore.preferences)
+
     testImplementation(Kotlin.coroutinesTest)
+
+    // Modules
+    implementation(project(Module.Component.preferences_contract))
 }

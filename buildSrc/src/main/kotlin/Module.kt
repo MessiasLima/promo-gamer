@@ -11,6 +11,13 @@ object Module {
         const val database_contract = "$path:database_contract"
     }
 
+    object Component {
+        private const val path = ":component"
+
+        const val preferences = "$path:preferences"
+        const val preferences_contract = "$path:preferences_contract"
+    }
+
     object Feature {
         private const val path = ":feature"
 

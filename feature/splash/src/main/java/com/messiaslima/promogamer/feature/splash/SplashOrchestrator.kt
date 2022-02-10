@@ -1,5 +1,6 @@
 package com.messiaslima.promogamer.feature.splash
 
+import com.messiaslima.promogamer.component.preferences.contract.PreferencesInteractor
 import com.messiaslima.promogamer.core.database.contract.StoreLocalDataSource
 import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import com.messiaslima.promogamer.domain.Store
@@ -11,6 +12,7 @@ import javax.inject.Inject
 class SplashOrchestrator @Inject constructor(
     private val storeService: StoreService,
     private val storeLocalDataSource: StoreLocalDataSource,
+    private val preferencesInteractor: PreferencesInteractor,
 ) {
     fun getStores(): Flow<List<Store>> {
         return if (shouldGetStoresFromLocalCache()) {
@@ -27,6 +29,7 @@ class SplashOrchestrator @Inject constructor(
 
     @Suppress("FunctionOnlyReturningConstant")
     private fun shouldGetStoresFromLocalCache(): Boolean {
+        preferencesInteractor.getDealsLastUpdateTime()
         return false
     }
 }
