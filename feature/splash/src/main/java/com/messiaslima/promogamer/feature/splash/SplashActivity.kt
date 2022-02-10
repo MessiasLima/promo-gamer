@@ -58,7 +58,7 @@ fun SplashScreen(
     closeAppAction: () -> Unit,
     successAction: () -> Unit,
 ) {
-    val uiState by viewModel.uiState.collectAsState(initial = UiState.Loading)
+    val uiState by viewModel.uiState.collectAsState(initial = UiState.Idle)
 
     Box(modifier = Modifier.fillMaxSize()) {
         Surface(
@@ -98,6 +98,7 @@ fun LoadingIndicator(
             UiState.Error -> R.string.store_synchonization_failure
             UiState.Loading -> R.string.store_synchonization_loading
             UiState.Success -> R.string.store_synchonization_success
+            UiState.Idle -> R.string.empty_string
         }
 
         Text(text = stringResource(id = message))
