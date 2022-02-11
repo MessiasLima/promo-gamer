@@ -7,6 +7,7 @@ apply(from = "$rootDir/script/module/feature.gradle")
 
 dependencies {
     implementation(Activity.compose)
+    implementation(ThreeTenAbp.threeTenAbp)
 
     implementation(project(Module.Core.ui))
     implementation(project(Module.Core.network_contract))
