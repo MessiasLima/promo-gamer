@@ -27,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.jakewharton.threetenabp.AndroidThreeTen
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 import com.messiaslima.promogamer.feature.splash.SplashViewModel.UiState
 import com.messiaslima.promogamer.feature.splash.ui.PromoGamerSplashTheme
@@ -37,6 +38,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidThreeTen.init(this)
         setContent {
             PromoGamerSplashTheme {
                 SplashScreen(
