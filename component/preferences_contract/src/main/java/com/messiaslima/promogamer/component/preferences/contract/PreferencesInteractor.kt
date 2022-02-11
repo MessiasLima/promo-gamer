@@ -1,6 +1,6 @@
 package com.messiaslima.promogamer.component.preferences.contract
 import kotlinx.coroutines.flow.Flow
-import java.time.LocalDateTime
+import org.threeten.bp.LocalDateTime
 
 interface PreferencesInteractor {
     fun getDealsLastUpdateTime(): Flow<LocalDateTime?>

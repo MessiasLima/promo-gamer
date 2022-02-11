@@ -2,7 +2,7 @@ package com.messiaslima.promogamer.core.preferences
 
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.messiaslima.promogamer.component.preferences.contract.PreferencesInteractor
-import java.time.LocalDateTime
+import org.threeten.bp.LocalDateTime
 import javax.inject.Inject
 
 class PreferencesInteractorImpl @Inject constructor(

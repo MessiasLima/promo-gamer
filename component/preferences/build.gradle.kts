@@ -15,7 +15,11 @@ dependencies {
     // DataStore
     implementation(DataStore.preferences)
 
+    // Testing
     testImplementation(Kotlin.coroutinesTest)
+
+    // Misc
+    implementation(ThreeTenAbp.threeTenAbp)
 
     // Modules
     implementation(project(Module.Component.preferences_contract))
