@@ -2,6 +2,7 @@ apply plugin: Android.gradlePlugin.library
 apply plugin: Kotlin.gradlePlugin.android
 
 apply from: "$rootDir/script/detekt.gradle"
+apply from: "$rootDir/script/jacoco.gradle"
 apply from: "$rootDir/script/module/android-setup.gradle"
 
 dependencies {
