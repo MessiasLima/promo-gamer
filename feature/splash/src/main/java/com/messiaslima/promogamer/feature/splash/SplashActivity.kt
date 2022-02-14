@@ -36,9 +36,9 @@ import com.messiaslima.promogamer.feature.splash.ui.PromoGamerSplashTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.FlowPreview
 
+@FlowPreview
 @AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
-@FlowPreview
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

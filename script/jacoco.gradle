@@ -9,6 +9,33 @@ project.afterEvaluate {
     android.libraryVariants.all { variant ->
         def variantName = variant.name
         def testTaskName = "test${variantName.capitalize()}UnitTest"
+        def promoGamerSourceDirectories = files([
+                "$project.projectDir/src/main/java",
+                "$project.projectDir/src/${variantName}/java",
+                "$project.projectDir/src/main/kotlin",
+                "$project.projectDir/src/${variantName}/kotlin"
+        ])
+
+        def execFile = null
+        if (testTaskName == "testDebugUnitTest") {
+            execFile = files("${project.buildDir}/outputs/unit_test_code_coverage/debugUnitTest/${testTaskName}.exec")
+        } else {
+            execFile = files("${project.buildDir}/jacoco/${testTaskName}.exec")
+        }
+        def excludes = [
+                '**/R.class',
+                '**/R$*.class',
+                '**/BuildConfig.*',
+                '**/Manifest*.*',
+                '**/*Test*.*',
+                'android/**/*.*',
+                '**/*_Impl.*',
+                '**/*_Factory.*',
+                '**/*_*',
+                'hilt_aggregated_deps/*'
+        ]
+        def javaClasses = fileTree(dir: variant.javaCompiler.destinationDir, excludes: excludes)
+        def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: excludes)
 
         tasks.create(name: "${testTaskName}Coverage", type: JacocoReport, dependsOn: "$testTaskName") {
             group = "Reporting"
@@ -19,39 +46,40 @@ project.afterEvaluate {
                 xml.enabled = true
             }
 
-            def excludes = [
-                    '**/R.class',
-                    '**/R$*.class',
-                    '**/BuildConfig.*',
-                    '**/Manifest*.*',
-                    '**/*Test*.*',
-                    'android/**/*.*',
-                    '**/*_Impl.*',
-                    '**/*_Factory.*',
-                    '**/*_*',
-                    'hilt_aggregated_deps/*'
-            ]
-            def javaClasses = fileTree(dir: variant.javaCompiler.destinationDir, excludes: excludes)
-            def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: excludes)
             getClassDirectories().setFrom(files([javaClasses, kotlinClasses]))
+            getSourceDirectories().setFrom(promoGamerSourceDirectories)
+            getExecutionData().setFrom(execFile)
+        }
 
-            getSourceDirectories().setFrom(
-                    files([
-                            "$project.projectDir/src/main/java",
-                            "$project.projectDir/src/${variantName}/java",
-                            "$project.projectDir/src/main/kotlin",
-                            "$project.projectDir/src/${variantName}/kotlin"
-                    ])
-            )
-
-            def execFile = null
-            if (testTaskName == "testDebugUnitTest") {
-                execFile = files("${project.buildDir}/outputs/unit_test_code_coverage/debugUnitTest/${testTaskName}.exec")
-            }else {
-                execFile = files("${project.buildDir}/jacoco/${testTaskName}.exec")
+        tasks.create(name: "${testTaskName}CoverageVerification", type: JacocoCoverageVerification) {
+            group = "Verification"
+            violationRules {
+                rule {
+                    enabled = true
+                    limit {
+                        counter = 'LINE'
+                        value = 'COVEREDRATIO'
+                        minimum = '0.8'.toBigDecimal()
+                    }
+                    limit {
+                        counter = 'BRANCH'
+                        value = 'COVEREDRATIO'
+                        minimum = '0.8'.toBigDecimal()
+                    }
+                }
             }
 
-            getExecutionData().setFrom(execFile)
+            sourceDirectories.from = promoGamerSourceDirectories
+            classDirectories.from = files([javaClasses, kotlinClasses])
+            executionData.from = execFile
+        }
+
+        tasks."$testTaskName" {
+            finalizedBy("${testTaskName}Coverage")
+        }
+
+        tasks."${testTaskName}Coverage" {
+            finalizedBy("${testTaskName}CoverageVerification")
         }
     }
 }
