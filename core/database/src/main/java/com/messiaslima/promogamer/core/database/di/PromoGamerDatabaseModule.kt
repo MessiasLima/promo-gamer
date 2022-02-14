@@ -1,7 +1,8 @@
-package com.messiaslima.promogamer.core.database
+package com.messiaslima.promogamer.core.database.di
 
 import android.content.Context
 import androidx.room.Room
+import com.messiaslima.promogamer.core.database.PromoGamerDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

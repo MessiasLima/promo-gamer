@@ -32,6 +32,7 @@ project.afterEvaluate {
                 '**/*_Impl.*',
                 '**/*_Factory.*',
                 '**/*_*',
+                '**/di/*',
                 'hilt_aggregated_deps/*'
         ]
         def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDir, excludes: excludes)

@@ -1,4 +1,4 @@
-package com.messiaslima.promogamer.core.database
+package com.messiaslima.promogamer.core.database.di
 
 import com.messiaslima.promogamer.core.database.contract.StoreLocalDataSource
 import com.messiaslima.promogamer.core.database.store.StoreLocalDataSourceImpl

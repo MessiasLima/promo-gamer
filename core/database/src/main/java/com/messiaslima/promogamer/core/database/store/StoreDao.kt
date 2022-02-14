@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface StoreDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(vararg users: StoreEntity)
+    suspend fun save(stores: List<StoreEntity>)
 
     @Query("SELECT * FROM store")
     suspend fun findAll(): List<StoreEntity>

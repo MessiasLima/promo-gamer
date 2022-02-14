@@ -11,7 +11,7 @@ class StoreLocalDataSourceImpl @Inject constructor(
 
     @Suppress("SpreadOperator")
     override suspend fun save(stores: List<Store>) {
-        val entities = stores.toEntity().toTypedArray()
-        storeDao.save(* entities)
+        val entities = stores.toEntity()
+        storeDao.save(entities)
     }
 }

@@ -22,4 +22,19 @@ class StoreEntityMapperKtTest {
 
         assertEquals(expected, fixtStoreEntityList.toDomain())
     }
+
+    @Test
+    fun `should map Store domain model to StoreEntity`() {
+        val fixtStoreDomainList = fixture<List<Store>>()
+        val expected = fixtStoreDomainList.map { fixtDomain ->
+            StoreEntity(
+                id = fixtDomain.id,
+                name = fixtDomain.name,
+                isActive = fixtDomain.isActive,
+                logo = fixtDomain.logo
+            )
+        }
+
+        assertEquals(expected, fixtStoreDomainList.toEntity())
+    }
 }
