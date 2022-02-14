@@ -91,6 +91,7 @@ fun SplashScreen(
     }
 }
 
+@FlowPreview
 @Composable
 fun LoadingIndicator(
     uiState: UiState,
@@ -148,6 +149,7 @@ fun LoadingIndicator(
     }
 }
 
+@FlowPreview
 @Preview(showBackground = true)
 @Composable
 fun LoadingIndicatorPreview() {
@@ -156,6 +158,8 @@ fun LoadingIndicatorPreview() {
     }
 }
 
+
+@FlowPreview
 @Preview(showBackground = true)
 @Composable
 fun LoadingIndicatorPreviewSuccess() {
@@ -166,6 +170,7 @@ fun LoadingIndicatorPreviewSuccess() {
 
 @Preview(showBackground = true)
 @Composable
+@FlowPreview
 fun LoadingIndicatorPreviewError() {
     PromoGamerTheme {
         LoadingIndicator(UiState.Error, {}, {}, {})
