@@ -12,7 +12,7 @@ class ResponseExtensionsKtTest {
     private val fixture = kotlinFixture()
 
     @Test
-    fun `should return body when sucessful`() {
+    fun `should return body when the response is successful`() {
         val responseBody = fixture<String>()
         val response = Response.success(responseBody)
 

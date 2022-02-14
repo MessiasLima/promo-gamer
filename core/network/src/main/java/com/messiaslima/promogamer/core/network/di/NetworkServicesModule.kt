@@ -1,4 +1,4 @@
-package com.messiaslima.promogamer.core.network
+package com.messiaslima.promogamer.core.network.di
 
 import com.messiaslima.promogamer.core.network.contract.store.StoreService
 import com.messiaslima.promogamer.core.network.store.StoreServiceImpl

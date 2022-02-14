@@ -1,5 +1,6 @@
-package com.messiaslima.promogamer.core.network
+package com.messiaslima.promogamer.core.network.di
 
+import com.messiaslima.promogamer.core.network.CheapSharkService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.migration.DisableInstallInCheck

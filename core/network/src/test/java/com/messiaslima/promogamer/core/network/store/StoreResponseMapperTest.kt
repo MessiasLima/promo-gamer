@@ -6,6 +6,7 @@ import com.messiaslima.promogamer.core.network.store.model.StoreResponse
 import com.messiaslima.promogamer.domain.Store
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class StoreResponseMapperTest {
@@ -15,10 +16,12 @@ class StoreResponseMapperTest {
     fun `should map StoreResponse to Store domain model`() {
         val validStoreResponse = StoreResponse(
             storeId = "1",
-            storeName = fixture<String>(),
+            storeName = "Steam",
             isActive = 1,
             imagesResponse = ImagesResponse(
-                logo = fixture<String>()
+                banner = "banner.png",
+                logo = "logo.png",
+                icon = "icon.ico"
             )
         )
 
@@ -26,15 +29,19 @@ class StoreResponseMapperTest {
             validStoreResponse,
             StoreResponse(
                 storeId = "invalid id",
-                storeName = fixture(),
-                isActive = fixture(),
-                imagesResponse = fixture()
+                storeName = null,
+                isActive = 0,
+                imagesResponse = ImagesResponse(
+                    banner = null,
+                    logo = null,
+                    icon = null
+                )
             ),
             StoreResponse(
-                storeId = "3",
-                storeName = null,
-                isActive = fixture(),
-                imagesResponse = fixture()
+                storeId = null,
+                storeName = "Invalid store",
+                isActive = null,
+                imagesResponse = fixture<ImagesResponse>().copy(logo = fixture<String>())
             ),
             StoreResponse(
                 storeId = "4",
@@ -53,5 +60,12 @@ class StoreResponseMapperTest {
         )
 
         assertThat(actual, equalTo(listOf(expected)))
+    }
+
+    @Test
+    fun `should return an empty list when the list is null`() {
+        val nullList: List<StoreResponse>? = null
+
+        assertEquals(emptyList<StoreResponse>(), nullList.toDomain())
     }
 }
