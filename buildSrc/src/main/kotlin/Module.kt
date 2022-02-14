@@ -22,5 +22,6 @@ object Module {
         private const val path = ":feature"
 
         const val splash = "$path:splash"
+        const val main = "$path:main"
     }
 }

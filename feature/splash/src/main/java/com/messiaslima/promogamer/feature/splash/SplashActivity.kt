@@ -1,6 +1,7 @@
 package com.messiaslima.promogamer.feature.splash
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,12 +30,15 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
+import com.messiaslima.promogamer.feature.main.MainActivity
 import com.messiaslima.promogamer.feature.splash.SplashViewModel.UiState
 import com.messiaslima.promogamer.feature.splash.ui.PromoGamerSplashTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.FlowPreview
 
 @AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
+@FlowPreview
 class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,14 +50,21 @@ class SplashActivity : ComponentActivity() {
                         finish()
                     },
                     successAction = {
+                        goToMain()
                         finish()
                     },
                 )
             }
         }
     }
+
+    private fun goToMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
 
+@FlowPreview
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel = viewModel(),

@@ -14,4 +14,5 @@ dependencies {
     implementation(project(Module.Core.database_contract))
     implementation(project(Module.Component.preferences_contract))
     implementation(project(Module.domain))
+    implementation(project(Module.Feature.main))
 }
