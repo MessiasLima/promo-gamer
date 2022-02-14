@@ -34,7 +34,7 @@ project.afterEvaluate {
                 '**/*_*',
                 'hilt_aggregated_deps/*'
         ]
-        def javaClasses = fileTree(dir: variant.javaCompiler.destinationDir, excludes: excludes)
+        def javaClasses = fileTree(dir: variant.javaCompileProvider.get().destinationDir, excludes: excludes)
         def kotlinClasses = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variantName}", excludes: excludes)
 
         tasks.create(name: "${testTaskName}Coverage", type: JacocoReport, dependsOn: "$testTaskName") {
