@@ -3,7 +3,6 @@ plugins {
     id(Kotlin.GradlePlugin.android)
     id(Kotlin.GradlePlugin.kapt)
     id(Hilt.GradlePlugin.plugin)
-    id(Ksp.gradlePlugin)
 }
 
 apply(from = "$rootDir/script/module/core.gradle")
@@ -16,7 +15,7 @@ dependencies {
     // Room
     implementation(Room.runtime)
     implementation(Room.ktx)
-    ksp(Room.compiler)
+    kapt(Room.compiler)
 
     // Modules
     implementation(project(Module.domain))
