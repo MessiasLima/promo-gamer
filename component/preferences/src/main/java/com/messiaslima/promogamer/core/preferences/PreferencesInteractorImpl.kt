@@ -1,5 +1,6 @@
 package com.messiaslima.promogamer.core.preferences
 
+import androidx.annotation.VisibleForTesting
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.messiaslima.promogamer.component.preferences.contract.PreferencesInteractor
 import kotlinx.coroutines.flow.flow
@@ -9,7 +10,8 @@ import javax.inject.Inject
 class PreferencesInteractorImpl @Inject constructor(
     private val preferencesRepository: PreferencesRepository
 ) : PreferencesInteractor {
-    private val parseLocalDateTime = { value: String? ->
+    @VisibleForTesting
+    val parseLocalDateTime = { value: String? ->
         value?.let(LocalDateTime::parse)
     }
 
@@ -40,7 +42,10 @@ class PreferencesInteractorImpl @Inject constructor(
     }
 
     companion object {
-        private val LAST_DEALS_UPDATE_TIME = stringPreferencesKey("last_deals_update_time")
-        private val LAST_STORE_UPDATE_TIME = stringPreferencesKey("last_store_update_time")
+        @VisibleForTesting
+        val LAST_DEALS_UPDATE_TIME = stringPreferencesKey("last_deals_update_time")
+
+        @VisibleForTesting
+        val LAST_STORE_UPDATE_TIME = stringPreferencesKey("last_store_update_time")
     }
 }
