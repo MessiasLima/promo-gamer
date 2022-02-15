@@ -9,6 +9,7 @@ object Module {
         const val network_contract = "$path:network_contract"
         const val database = "$path:database"
         const val database_contract = "$path:database_contract"
+        const val navigation_contract = "$path:navigation_contract"
     }
 
     object Component {

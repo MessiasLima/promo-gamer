@@ -109,4 +109,5 @@ dependencies {
     implementation(project(Module.Core.database))
     implementation(project(Module.Component.preferences))
     implementation(project(Module.Feature.splash))
+    implementation(project(Module.Feature.home))
 }

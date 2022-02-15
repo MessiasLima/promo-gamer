@@ -9,4 +9,5 @@ dependencies {
     implementation(Activity.compose)
 
     implementation(project(Module.Core.ui))
+    implementation(project(Module.Feature.home_contract))
 }
