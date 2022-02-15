@@ -9,6 +9,8 @@
       <module name="PromoGamer.core.network" target="11" />
       <module name="PromoGamer.core.preferences" target="11" />
       <module name="PromoGamer.core.ui" target="11" />
+      <module name="PromoGamer.feature.home" target="11" />
+      <module name="PromoGamer.feature.home_contract" target="11" />
       <module name="PromoGamer.feature.main" target="11" />
       <module name="PromoGamer.feature.splash" target="11" />
     </bytecodeTargetLevel>

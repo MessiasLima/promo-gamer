@@ -23,5 +23,7 @@ object Module {
 
         const val splash = "$path:splash"
         const val main = "$path:main"
+        const val home = "$path:home"
+        const val home_contract = "$path:home_contract"
     }
 }
