@@ -34,9 +34,10 @@ dependencies {
     implementation(Compose.ui)
     implementation(Compose.material)
     implementation(Compose.uiToolingPreview)
-    androidTestImplementation(Compose.uiTestJunit4)
+    implementation(Compose.navigation)
     implementation(Compose.uiTooling)
     debugImplementation(Compose.uiTestManifest)
+    androidTestImplementation(Compose.uiTestJunit4)
 
     // Hilt
     implementation(Hilt.android)
