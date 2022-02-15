@@ -15,7 +15,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject
-    lateinit var homeNavigator: HomeNavigator
+    lateinit var compositeNavigators: CompositeNavigators
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    MainScreen(homeNavigator)
+                    MainScreen(compositeNavigators)
                 }
             }
         }

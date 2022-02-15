@@ -5,14 +5,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
-import com.messiaslima.promogamer.feature.home_contract.HomeNavigator
 
 @Composable
-fun MainScreen(homeNavigator: HomeNavigator) {
+fun MainScreen(compositeNavigators: CompositeNavigators) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = homeNavigator.route) {
-        homeNavigator.configure(this)
+    NavHost(
+        navController = navController,
+        startDestination = compositeNavigators.homeNavigator.route
+    ) {
+        compositeNavigators.navigators.forEach { it.configure(this) }
     }
 }
 
