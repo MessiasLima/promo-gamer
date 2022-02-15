@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="PromoGamer.app" target="11" />
+      <module name="PromoGamer.buildSrc" target="11" />
+      <module name="PromoGamer.component.preferences" target="11" />
+      <module name="PromoGamer.core.database" target="11" />
+      <module name="PromoGamer.core.network" target="11" />
+      <module name="PromoGamer.core.preferences" target="11" />
+      <module name="PromoGamer.core.ui" target="11" />
+      <module name="PromoGamer.feature.main" target="11" />
+      <module name="PromoGamer.feature.splash" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

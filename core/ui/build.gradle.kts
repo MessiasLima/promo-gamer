@@ -24,18 +24,8 @@ android {
 dependencies {
     // Core
     implementation(Core.coreKtx)
-    implementation(Activity.compose)
-    implementation(Lifecycle.runtimeKtx)
 
     // Compose
     implementation(Compose.ui)
     implementation(Compose.material)
-    implementation(Compose.uiToolingPreview)
-    androidTestImplementation(Compose.uiTestJunit4)
-    debugImplementation(Compose.uiTooling)
-    debugImplementation(Compose.uiTestManifest)
-
-    // Testing
-    androidTestImplementation(Test.Ext.junit)
-    androidTestImplementation(Test.Espresso.core)
 }

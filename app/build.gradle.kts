@@ -1,6 +1,8 @@
 plugins {
     id(Android.GradlePlugin.application)
     id(Kotlin.GradlePlugin.android)
+    id(Kotlin.GradlePlugin.kapt)
+    id(Hilt.gradlePlugin.plugin)
 }
 
 apply(from = "$rootDir/script/detekt.gradle")
@@ -28,10 +30,21 @@ android {
             testCoverage {
                 jacocoVersion = "0.8.7"
             }
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
+
+        create("minifiedDebug") {
+            isDebuggable = true
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = true
+            applicationIdSuffix = ".minified"
+            versionNameSuffix = "-minified"
         }
 
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -63,6 +76,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     // Core
     implementation(Core.coreKtx)
@@ -77,11 +94,19 @@ dependencies {
     debugImplementation(Compose.uiTooling)
     debugImplementation(Compose.uiTestManifest)
 
+    // Hilt
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
+
     // Testing
     testImplementation(Junit.junit)
-    androidTestImplementation(Test.Ext.junit)
-    androidTestImplementation(Test.Espresso.core)
+    androidTestImplementation(Testing.Ext.junit)
+    androidTestImplementation(Testing.Espresso.core)
 
     // Modules
     implementation(project(Module.Core.ui))
+    implementation(project(Module.Core.network))
+    implementation(project(Module.Core.database))
+    implementation(project(Module.Component.preferences))
+    implementation(project(Module.Feature.splash))
 }

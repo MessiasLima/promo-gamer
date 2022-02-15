@@ -1,0 +1,53 @@
+apply plugin: Android.gradlePlugin.library
+apply plugin: Kotlin.gradlePlugin.android
+apply plugin: Kotlin.gradlePlugin.kapt
+apply plugin: Hilt.gradlePlugin.plugin
+
+apply from: "$rootDir/script/detekt.gradle"
+apply from: "$rootDir/script/module/android-setup.gradle"
+
+android {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.version
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+dependencies {
+    // Core
+    implementation(Core.coreKtx)
+
+    // Compose
+    implementation(Compose.ui)
+    implementation(Compose.material)
+    implementation(Compose.uiToolingPreview)
+    androidTestImplementation(Compose.uiTestJunit4)
+    implementation(Compose.uiTooling)
+    debugImplementation(Compose.uiTestManifest)
+
+    // Hilt
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
+
+    // Misc
+    implementation(Lifecycle.runtimeKtx)
+    implementation(Lifecycle.viewModelCompose)
+
+    // Testing
+    testImplementation(Junit.junit)
+    androidTestImplementation(Testing.ext.junit)
+    androidTestImplementation(Testing.espresso.core)
+}

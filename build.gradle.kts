@@ -5,6 +5,13 @@ plugins {
     id(GitHook.gradlePlugin) version GitHook.version apply false
     id(DependencyUpdater.gradlePlugin) version DependencyUpdater.version apply false
     id(Detekt.gradlePlugin) version Detekt.version
+    id(Ksp.gradlePlugin) version Ksp.version
+}
+
+buildscript {
+    dependencies {
+        classpath(Hilt.gradlePlugin.classpath)
+    }
 }
 
 apply(from = "$rootDir/script/githook.gradle")

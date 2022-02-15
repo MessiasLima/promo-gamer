@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/green</color>
+    <color name="primaryVariant">@color/purple</color>
+    <color name="onPrimary">@color/white</color>
+
+    <color name="secondary">@color/green</color>
+    <color name="secondaryVariant">@color/teal</color>
+    <color name="onSecondary">@color/black</color>
+
+    <color name="statusBar">@color/white</color>
+</resources>

@@ -1,0 +1,53 @@
+apply plugin: Android.gradlePlugin.library
+apply plugin: Kotlin.gradlePlugin.android
+
+android {
+    compileSdk = Android.compileSdk
+
+    defaultConfig {
+        minSdk = Android.minSdk
+        targetSdk = Android.targetSdk
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+            testCoverage {
+                jacocoVersion = "0.8.7"
+            }
+        }
+
+        minifiedDebug {
+            debuggable = true
+            minifyEnabled = true
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
+
+        release {
+            minifyEnabled = true
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
