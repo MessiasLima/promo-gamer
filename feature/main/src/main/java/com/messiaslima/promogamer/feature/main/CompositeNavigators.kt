@@ -1,7 +1,7 @@
 package com.messiaslima.promogamer.feature.main
 
-import com.messiaslima.navigation_contract.Navigator
-import com.messiaslima.promogamer.feature.home_contract.HomeNavigator
+import com.messiaslima.promogamer.core.navigation.contract.Navigator
+import com.messiaslima.promogamer.feature.home.contract.HomeNavigator
 import javax.inject.Inject
 
 class CompositeNavigators @Inject constructor(

@@ -1,4 +1,4 @@
-package com.messiaslima.navigation_contract
+package com.messiaslima.promogamer.core.navigation.contract
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

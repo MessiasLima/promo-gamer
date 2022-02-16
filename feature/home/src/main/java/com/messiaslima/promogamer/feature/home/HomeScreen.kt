@@ -12,7 +12,7 @@ fun HomeScreen() {
 
 @Preview
 @Composable
-private fun HomeScreenPreview() {
+fun HomeScreenPreview() {
     PromoGamerTheme {
         HomeScreen()
     }

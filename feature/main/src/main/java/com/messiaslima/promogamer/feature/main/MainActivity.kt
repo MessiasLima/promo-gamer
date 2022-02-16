@@ -8,7 +8,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
-import com.messiaslima.promogamer.feature.home_contract.HomeNavigator
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

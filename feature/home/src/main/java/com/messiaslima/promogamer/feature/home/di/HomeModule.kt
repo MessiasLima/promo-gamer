@@ -1,7 +1,7 @@
 package com.messiaslima.promogamer.feature.home.di
 
-import com.messiaslima.promogamer.feature.home_contract.HomeNavigator
 import com.messiaslima.promogamer.feature.home.HomeNavigatorImpl
+import com.messiaslima.promogamer.feature.home.contract.HomeNavigator
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
