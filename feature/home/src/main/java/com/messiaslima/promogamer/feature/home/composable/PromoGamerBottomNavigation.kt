@@ -1,14 +1,10 @@
 package com.messiaslima.promogamer.feature.home.composable
 
 import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
@@ -40,24 +36,14 @@ fun PromoGamerBottomNavigation(
         backgroundColor = MaterialTheme.colors.surface
     ) {
         items.forEach {
-            BottomNavigationItem(
-                icon = {
-                    Icon(
-                        imageVector = it.icon,
-                        contentDescription = stringResource(id = it.iconContentDescription),
-                    )
-                },
-                label = { Text(text = stringResource(id = it.label)) },
-                selected = it.selected,
-                onClick = { it.navigator?.let(onItemClicked) },
-            )
+            PromoGamerBottomNavigationItem(model = it, onItemClicked = onItemClicked)
         }
     }
 }
 
 @Preview
 @Composable
-private fun PromoGamerBottomNavigationPreview() {
+fun PromoGamerBottomNavigationPreview() {
     PromoGamerTheme {
         Surface {
             PromoGamerBottomNavigation(onItemClicked = {})

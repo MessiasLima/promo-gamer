@@ -42,7 +42,7 @@ fun RowScope.PromoGamerBottomNavigationItem(
 
 @Preview
 @Composable
-private fun PromoGamerBottomNavigationItemPreview() {
+fun PromoGamerBottomNavigationItemPreview() {
     val model = PromoGamerBottomNavigationItemModel(
         navigator = null,
         icon = EvaIcons.Outline.Pricetags,
