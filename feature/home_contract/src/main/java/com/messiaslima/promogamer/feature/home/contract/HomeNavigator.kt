@@ -1,5 +1,5 @@
 package com.messiaslima.promogamer.feature.home.contract
 
-import com.messiaslima.promogamer.core.navigation.contract.Navigator
+import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 
-interface HomeNavigator : Navigator
+interface HomeNavigator : AppNavigator

@@ -1,3 +1,5 @@
 package com.messiaslima.promogamer.feature.latestdeals.contract
 
-interface LatestDealsNavigator
+import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
+
+interface LatestDealsNavigator : AppNavigator

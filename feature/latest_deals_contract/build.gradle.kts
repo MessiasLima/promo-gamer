@@ -6,5 +6,4 @@ plugins {
 apply(from = "$rootDir/script/module/feature.gradle")
 
 dependencies {
-    implementation(project(AppModule.Core.ui))
 }

@@ -9,7 +9,6 @@ dependencies {
     implementation(Activity.compose)
     implementation(ThreeTenAbp.threeTenAbp)
 
-    implementation(project(AppModule.Core.ui))
     implementation(project(AppModule.Core.network_contract))
     implementation(project(AppModule.Core.database_contract))
     implementation(project(AppModule.Component.preferences_contract))

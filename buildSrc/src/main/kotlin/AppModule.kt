@@ -1,6 +1,7 @@
 object AppModule {
     const val domain = ":domain"
 
+    val core = Core
     object Core {
         private const val path = ":core"
 
@@ -26,5 +27,7 @@ object AppModule {
         const val main = "$path:main"
         const val home = "$path:home"
         const val home_contract = "$path:home_contract"
+        const val latest_deals = "$path:latest_deals"
+        const val latest_deals_contract = "$path:latest_deals_contract"
     }
 }

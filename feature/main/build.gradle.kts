@@ -8,6 +8,5 @@ apply(from = "$rootDir/script/module/feature.gradle")
 dependencies {
     implementation(Activity.compose)
 
-    implementation(project(AppModule.Core.ui))
     implementation(project(AppModule.Feature.home_contract))
 }

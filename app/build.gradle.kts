@@ -110,4 +110,5 @@ dependencies {
     implementation(project(AppModule.Component.preferences))
     implementation(project(AppModule.Feature.splash))
     implementation(project(AppModule.Feature.home))
+    implementation(project(AppModule.Feature.latest_deals))
 }

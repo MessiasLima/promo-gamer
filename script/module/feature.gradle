@@ -51,4 +51,8 @@ dependencies {
     testImplementation(Junit.junit)
     androidTestImplementation(Testing.ext.junit)
     androidTestImplementation(Testing.espresso.core)
+
+    // Module
+    implementation(project(AppModule.core.ui))
+    api(project(AppModule.core.navigation_contract))
 }
