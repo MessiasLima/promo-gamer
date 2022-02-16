@@ -1,4 +1,4 @@
-object Module {
+object AppModule {
     const val domain = ":domain"
 
     object Core {

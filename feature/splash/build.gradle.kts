@@ -9,10 +9,10 @@ dependencies {
     implementation(Activity.compose)
     implementation(ThreeTenAbp.threeTenAbp)
 
-    implementation(project(Module.Core.ui))
-    implementation(project(Module.Core.network_contract))
-    implementation(project(Module.Core.database_contract))
-    implementation(project(Module.Component.preferences_contract))
-    implementation(project(Module.domain))
-    implementation(project(Module.Feature.main))
+    implementation(project(AppModule.Core.ui))
+    implementation(project(AppModule.Core.network_contract))
+    implementation(project(AppModule.Core.database_contract))
+    implementation(project(AppModule.Component.preferences_contract))
+    implementation(project(AppModule.domain))
+    implementation(project(AppModule.Feature.main))
 }

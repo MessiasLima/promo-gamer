@@ -22,5 +22,5 @@ dependencies {
     implementation(ThreeTenAbp.threeTenAbp)
 
     // Modules
-    implementation(project(Module.Component.preferences_contract))
+    implementation(project(AppModule.Component.preferences_contract))
 }

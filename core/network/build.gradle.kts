@@ -16,8 +16,8 @@ dependencies {
     implementation(Hilt.android)
     kapt(Hilt.compiler)
 
-    implementation(project(Module.Core.network_contract))
-    implementation(project(Module.domain))
+    implementation(project(AppModule.Core.network_contract))
+    implementation(project(AppModule.domain))
 
     testImplementation(Kotlin.coroutinesTest)
 }
