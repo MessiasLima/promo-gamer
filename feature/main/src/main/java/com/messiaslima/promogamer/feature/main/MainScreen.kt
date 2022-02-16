@@ -14,14 +14,6 @@ fun MainScreen(compositeNavigators: CompositeNavigators) {
         navController = navController,
         startDestination = compositeNavigators.homeNavigator.route
     ) {
-        compositeNavigators.navigators.forEach { it.configure(this) }
-    }
-}
-
-
-@Preview
-@Composable
-fun MainScreenPreview() {
-    PromoGamerTheme {
+        compositeNavigators.navigators.forEach { it.configure(this, navController) }
     }
 }
