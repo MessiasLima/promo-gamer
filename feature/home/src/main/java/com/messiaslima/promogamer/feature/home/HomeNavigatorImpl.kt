@@ -7,14 +7,13 @@ import com.messiaslima.promogamer.feature.home.contract.HomeNavigator
 import javax.inject.Inject
 
 class HomeNavigatorImpl @Inject constructor(
-    private val compositeNavigators: HomeCompositeNavigators,
-    private val homeViewModelFactory: HomeViewModelFactory
+    private val compositeNavigators: HomeCompositeNavigators
 ) : HomeNavigator {
     override val route = "home"
 
     override fun configure(navGraphBuilder: NavGraphBuilder, navController: NavController) {
         navGraphBuilder.composable(route) {
-            HomeScreen(homeViewModelFactory)
+            HomeScreen(compositeNavigators = compositeNavigators, mainNavController = navController)
         }
     }
 }
