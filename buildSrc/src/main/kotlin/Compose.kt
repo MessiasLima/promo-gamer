@@ -1,6 +1,6 @@
 object Compose {
     const val version = "1.0.5"
-    private const val navigationVersion = "2.4.1"
+    private const val navigationVersion = "2.4.0-beta02"
     private const val constraintLayoutVersion = "1.0.0"
     private const val evaIconsVersion = "1.0.0"
 
