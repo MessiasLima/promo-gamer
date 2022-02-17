@@ -9,6 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 import com.messiaslima.promogamer.feature.home.composable.HomeNavHost
 import com.messiaslima.promogamer.feature.home.composable.AppBottomNavigation
@@ -46,10 +47,25 @@ fun HomeScreen(
             },
             homeCompositeNavigators = compositeNavigators,
             currentDestinationRoute = homeNavController.currentDestination?.route,
-            onItemClicked = {
-                homeNavController.navigate(it.route)
+            onItemClicked = { clickedNavigator ->
+                compositeNavigators?.let {
+                    performNavigation(homeNavController, clickedNavigator, compositeNavigators)
+                }
             }
         )
+    }
+}
+
+private fun performNavigation(
+    homeNavController: NavController,
+    clickedNavigator: AppNavigator,
+    homeCompositeNavigators: HomeCompositeNavigators,
+) {
+    if (homeNavController.currentDestination?.route == clickedNavigator.route) return
+
+    homeNavController.navigate(clickedNavigator.route) {
+        popUpTo(homeCompositeNavigators.latestDealsNavigator.route)
+        launchSingleTop = true
     }
 }
 
