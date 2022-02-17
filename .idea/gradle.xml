@@ -30,6 +30,8 @@
             <option value="$PROJECT_DIR$/feature/latest_deals" />
             <option value="$PROJECT_DIR$/feature/latest_deals_contract" />
             <option value="$PROJECT_DIR$/feature/main" />
+            <option value="$PROJECT_DIR$/feature/saved_deals" />
+            <option value="$PROJECT_DIR$/feature/saved_deals_contract" />
             <option value="$PROJECT_DIR$/feature/splash" />
           </set>
         </option>

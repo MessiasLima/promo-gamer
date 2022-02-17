@@ -29,5 +29,7 @@ object AppModule {
         const val home_contract = "$path:home_contract"
         const val latest_deals = "$path:latest_deals"
         const val latest_deals_contract = "$path:latest_deals_contract"
+        const val saved_deals = "$path:saved_deals"
+        const val saved_deals_contract = "$path:saved_deals_contract"
     }
 }
