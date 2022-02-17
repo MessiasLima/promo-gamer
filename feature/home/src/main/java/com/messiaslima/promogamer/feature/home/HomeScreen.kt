@@ -11,8 +11,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
-import com.messiaslima.promogamer.feature.home.composable.HomeNavHost
 import com.messiaslima.promogamer.feature.home.composable.AppBottomNavigation
+import com.messiaslima.promogamer.feature.home.composable.HomeNavHost
 
 @Composable
 fun HomeScreen(
@@ -45,14 +45,13 @@ fun HomeScreen(
             modifier = Modifier.constrainAs(bottomNavigation) {
                 bottom.linkTo(parent.bottom)
             },
-            homeCompositeNavigators = compositeNavigators,
-            currentDestinationRoute = homeNavController.currentDestination?.route,
-            onItemClicked = { clickedNavigator ->
-                compositeNavigators?.let {
-                    performNavigation(homeNavController, clickedNavigator, compositeNavigators)
-                }
+            compositeNavigators = compositeNavigators,
+            homeNavController = homeNavController
+        ) { clickedNavigator ->
+            compositeNavigators?.let {
+                performNavigation(homeNavController, clickedNavigator, compositeNavigators)
             }
-        )
+        }
     }
 }
 
