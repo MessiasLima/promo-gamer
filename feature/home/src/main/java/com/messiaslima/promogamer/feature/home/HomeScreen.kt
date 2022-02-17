@@ -38,8 +38,13 @@ fun HomeScreen(
                 ) {
                     mainNavController?.let {
                         compositeNavigators?.latestDealsNavigator?.configure(
-                            this,
-                            mainNavController
+                            navGraphBuilder = this,
+                            navController = mainNavController
+                        )
+
+                        compositeNavigators?.savedDealsNavigator?.configure(
+                            navGraphBuilder = this,
+                            navController = mainNavController,
                         )
                     }
                 }

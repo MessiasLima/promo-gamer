@@ -10,4 +10,5 @@ dependencies {
     implementation(Compose.constraintLayout)
     implementation(project(AppModule.Feature.home_contract))
     implementation(project(AppModule.Feature.latest_deals_contract))
+    implementation(project(AppModule.Feature.saved_deals_contract))
 }

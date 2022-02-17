@@ -12,6 +12,7 @@ import com.messiaslima.promogamer.feature.home.HomeCompositeNavigators
 import com.messiaslima.promogamer.feature.home.R
 import compose.icons.EvaIcons
 import compose.icons.evaicons.Outline
+import compose.icons.evaicons.outline.Heart
 import compose.icons.evaicons.outline.Pricetags
 
 @Composable
@@ -28,6 +29,14 @@ fun PromoGamerBottomNavigation(
             iconContentDescription = R.string.latest_deals_icon,
             label = R.string.latest_deals,
             selected = homeCompositeNavigators?.latestDealsNavigator?.route == currentDestinationRoute,
+        ),
+
+        PromoGamerBottomNavigationItemModel(
+            navigator = homeCompositeNavigators?.savedDealsNavigator,
+            icon = EvaIcons.Outline.Heart,
+            iconContentDescription = R.string.saved_deals_icon,
+            label = R.string.saved_deals,
+            selected = homeCompositeNavigators?.savedDealsNavigator?.route == currentDestinationRoute,
         )
     )
 
