@@ -8,50 +8,39 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
-import com.messiaslima.promogamer.feature.home.composable.PromoGamerBottomNavigation
+import com.messiaslima.promogamer.feature.home.composable.HomeNavHost
+import com.messiaslima.promogamer.feature.home.composable.AppBottomNavigation
 
 @Composable
 fun HomeScreen(
     mainNavController: NavController? = null,
     compositeNavigators: HomeCompositeNavigators? = null,
-    showNavHost: Boolean = true
 ) {
     val homeNavController = rememberNavController()
 
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
-        val (navHost, bottomNavigation) = createRefs()
+        val (navHostWrapper, bottomNavigation) = createRefs()
+
         Box(
-            modifier = Modifier.constrainAs(navHost) {
+            modifier = Modifier.constrainAs(navHostWrapper) {
                 top.linkTo(parent.top)
                 bottom.linkTo(bottomNavigation.top)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
             },
         ) {
-            if (showNavHost) {
-                NavHost(
-                    navController = homeNavController,
-                    startDestination = compositeNavigators?.latestDealsNavigator?.route ?: "home"
-                ) {
-                    mainNavController?.let {
-                        compositeNavigators?.latestDealsNavigator?.configure(
-                            navGraphBuilder = this,
-                            navController = mainNavController
-                        )
-
-                        compositeNavigators?.savedDealsNavigator?.configure(
-                            navGraphBuilder = this,
-                            navController = mainNavController,
-                        )
-                    }
-                }
+            if (mainNavController != null && compositeNavigators != null) {
+                HomeNavHost(
+                    homeNavController = homeNavController,
+                    mainNavController = mainNavController,
+                    compositeNavigators = compositeNavigators,
+                )
             }
         }
 
-        PromoGamerBottomNavigation(
+        AppBottomNavigation(
             modifier = Modifier.constrainAs(bottomNavigation) {
                 bottom.linkTo(parent.bottom)
             },
@@ -69,7 +58,7 @@ fun HomeScreen(
 fun HomeScreenPreview() {
     PromoGamerTheme {
         Surface {
-            HomeScreen(showNavHost = false)
+            HomeScreen()
         }
     }
 }

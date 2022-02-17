@@ -16,14 +16,14 @@ import compose.icons.evaicons.outline.Heart
 import compose.icons.evaicons.outline.Pricetags
 
 @Composable
-fun PromoGamerBottomNavigation(
+fun AppBottomNavigation(
     modifier: Modifier = Modifier,
     homeCompositeNavigators: HomeCompositeNavigators? = null,
     onItemClicked: (navigator: AppNavigator) -> Unit,
     currentDestinationRoute: String? = null
 ) {
     val items = listOf(
-        PromoGamerBottomNavigationItemModel(
+        AppBottomNavigationItemModel(
             navigator = homeCompositeNavigators?.latestDealsNavigator,
             icon = EvaIcons.Outline.Pricetags,
             iconContentDescription = R.string.latest_deals_icon,
@@ -31,7 +31,7 @@ fun PromoGamerBottomNavigation(
             selected = homeCompositeNavigators?.latestDealsNavigator?.route == currentDestinationRoute,
         ),
 
-        PromoGamerBottomNavigationItemModel(
+        AppBottomNavigationItemModel(
             navigator = homeCompositeNavigators?.savedDealsNavigator,
             icon = EvaIcons.Outline.Heart,
             iconContentDescription = R.string.saved_deals_icon,
@@ -45,7 +45,7 @@ fun PromoGamerBottomNavigation(
         backgroundColor = MaterialTheme.colors.surface
     ) {
         items.forEach {
-            PromoGamerBottomNavigationItem(model = it, onItemClicked = onItemClicked)
+            AppBottomNavigationItem(model = it, onItemClicked = onItemClicked)
         }
     }
 }
@@ -55,7 +55,7 @@ fun PromoGamerBottomNavigation(
 fun PromoGamerBottomNavigationPreview() {
     PromoGamerTheme {
         Surface {
-            PromoGamerBottomNavigation(onItemClicked = {})
+            AppBottomNavigation(onItemClicked = {})
         }
     }
 }

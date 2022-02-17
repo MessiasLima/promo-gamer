@@ -21,8 +21,8 @@ import compose.icons.evaicons.Outline
 import compose.icons.evaicons.outline.Pricetags
 
 @Composable
-fun RowScope.PromoGamerBottomNavigationItem(
-    model: PromoGamerBottomNavigationItemModel,
+fun RowScope.AppBottomNavigationItem(
+    model: AppBottomNavigationItemModel,
     onItemClicked: (AppNavigator) -> Unit
 ) {
     BottomNavigationItem(
@@ -43,7 +43,7 @@ fun RowScope.PromoGamerBottomNavigationItem(
 @Preview
 @Composable
 fun PromoGamerBottomNavigationItemPreview() {
-    val model = PromoGamerBottomNavigationItemModel(
+    val model = AppBottomNavigationItemModel(
         navigator = null,
         icon = EvaIcons.Outline.Pricetags,
         iconContentDescription = R.string.latest_deals_icon,
@@ -54,14 +54,14 @@ fun PromoGamerBottomNavigationItemPreview() {
     PromoGamerTheme {
         Surface {
             Row {
-                PromoGamerBottomNavigationItem(model = model) {}
-                PromoGamerBottomNavigationItem(model = model.copy(selected = true)) {}
+                AppBottomNavigationItem(model = model) {}
+                AppBottomNavigationItem(model = model.copy(selected = true)) {}
             }
         }
     }
 }
 
-data class PromoGamerBottomNavigationItemModel(
+data class AppBottomNavigationItemModel(
     val navigator: AppNavigator?,
     val icon: ImageVector,
     @StringRes val iconContentDescription: Int,
