@@ -6,10 +6,17 @@
       <module name="PromoGamer.buildSrc" target="11" />
       <module name="PromoGamer.component.preferences" target="11" />
       <module name="PromoGamer.core.database" target="11" />
+      <module name="PromoGamer.core.navigation_contract" target="11" />
       <module name="PromoGamer.core.network" target="11" />
       <module name="PromoGamer.core.preferences" target="11" />
       <module name="PromoGamer.core.ui" target="11" />
+      <module name="PromoGamer.feature.home" target="11" />
+      <module name="PromoGamer.feature.home_contract" target="11" />
+      <module name="PromoGamer.feature.latest_deals" target="11" />
+      <module name="PromoGamer.feature.latest_deals_contract" target="11" />
       <module name="PromoGamer.feature.main" target="11" />
+      <module name="PromoGamer.feature.saved_deals" target="11" />
+      <module name="PromoGamer.feature.saved_deals_contract" target="11" />
       <module name="PromoGamer.feature.splash" target="11" />
     </bytecodeTargetLevel>
   </component>

@@ -1,6 +1,7 @@
-object Module {
+object AppModule {
     const val domain = ":domain"
 
+    val core = Core
     object Core {
         private const val path = ":core"
 
@@ -9,6 +10,7 @@ object Module {
         const val network_contract = "$path:network_contract"
         const val database = "$path:database"
         const val database_contract = "$path:database_contract"
+        const val navigation_contract = "$path:navigation_contract"
     }
 
     object Component {
@@ -23,5 +25,11 @@ object Module {
 
         const val splash = "$path:splash"
         const val main = "$path:main"
+        const val home = "$path:home"
+        const val home_contract = "$path:home_contract"
+        const val latest_deals = "$path:latest_deals"
+        const val latest_deals_contract = "$path:latest_deals_contract"
+        const val saved_deals = "$path:saved_deals"
+        const val saved_deals_contract = "$path:saved_deals_contract"
     }
 }

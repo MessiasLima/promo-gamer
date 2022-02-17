@@ -19,12 +19,19 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/database" />
             <option value="$PROJECT_DIR$/core/database_contract" />
+            <option value="$PROJECT_DIR$/core/navigation_contract" />
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/core/network_contract" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/home" />
+            <option value="$PROJECT_DIR$/feature/home_contract" />
+            <option value="$PROJECT_DIR$/feature/latest_deals" />
+            <option value="$PROJECT_DIR$/feature/latest_deals_contract" />
             <option value="$PROJECT_DIR$/feature/main" />
+            <option value="$PROJECT_DIR$/feature/saved_deals" />
+            <option value="$PROJECT_DIR$/feature/saved_deals_contract" />
             <option value="$PROJECT_DIR$/feature/splash" />
           </set>
         </option>

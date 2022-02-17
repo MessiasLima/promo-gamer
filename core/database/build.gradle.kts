@@ -18,8 +18,8 @@ dependencies {
     kapt(Room.compiler)
 
     // Modules
-    implementation(project(Module.domain))
-    implementation(project(Module.Core.database_contract))
+    implementation(project(AppModule.domain))
+    implementation(project(AppModule.Core.database_contract))
 
     // Testing
     testImplementation(Kotlin.coroutinesTest)

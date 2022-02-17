@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    implementation(project(Module.domain))
+    implementation(project(AppModule.domain))
 }

@@ -104,9 +104,12 @@ dependencies {
     androidTestImplementation(Testing.Espresso.core)
 
     // Modules
-    implementation(project(Module.Core.ui))
-    implementation(project(Module.Core.network))
-    implementation(project(Module.Core.database))
-    implementation(project(Module.Component.preferences))
-    implementation(project(Module.Feature.splash))
+    implementation(project(AppModule.Core.ui))
+    implementation(project(AppModule.Core.network))
+    implementation(project(AppModule.Core.database))
+    implementation(project(AppModule.Component.preferences))
+    implementation(project(AppModule.Feature.splash))
+    implementation(project(AppModule.Feature.home))
+    implementation(project(AppModule.Feature.latest_deals))
+    implementation(project(AppModule.Feature.saved_deals))
 }
