@@ -31,6 +31,8 @@
             <option value="$PROJECT_DIR$/feature/latest_deals_contract" />
             <option value="$PROJECT_DIR$/feature/latest_deals_games" />
             <option value="$PROJECT_DIR$/feature/latest_deals_games_contract" />
+            <option value="$PROJECT_DIR$/feature/latest_deals_products" />
+            <option value="$PROJECT_DIR$/feature/latest_deals_products_contract" />
             <option value="$PROJECT_DIR$/feature/main" />
             <option value="$PROJECT_DIR$/feature/saved_deals" />
             <option value="$PROJECT_DIR$/feature/saved_deals_contract" />

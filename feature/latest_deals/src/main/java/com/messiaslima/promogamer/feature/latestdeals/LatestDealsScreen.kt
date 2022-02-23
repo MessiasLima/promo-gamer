@@ -45,7 +45,11 @@ fun LatestDealsScreen(
         ),
         SegmentItemModel(
             label = stringResource(id = R.string.products),
-            isSelected = false
+            isSelected = isSelected(
+                currentDestination,
+                compositeNavigator?.latestDealsProductsNavigator
+            ),
+            navigator = compositeNavigator?.latestDealsProductsNavigator
         )
     )
 
@@ -82,7 +86,15 @@ fun LatestDealsScreen(
                     navController = latestDealsNavController,
                     startDestination = compositeNavigator.latestDealsGamesNavigator.route
                 ) {
-                    compositeNavigator.latestDealsGamesNavigator.configure(this, mainNavController)
+                    compositeNavigator.latestDealsGamesNavigator.configure(
+                        navGraphBuilder = this,
+                        navController = mainNavController
+                    )
+
+                    compositeNavigator.latestDealsProductsNavigator.configure(
+                        navGraphBuilder = this,
+                        navController = mainNavController
+                    )
                 }
             }
         }

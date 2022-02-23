@@ -1,14 +1,11 @@
 package com.messiaslima.promogamer.feature.home
 
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
@@ -70,7 +67,7 @@ private fun performNavigation(
     if (homeNavController.currentDestination?.route == clickedNavigator.route) return
 
     homeNavController.navigate(clickedNavigator.route) {
-        popUpTo(homeCompositeNavigators.latestDealsNavigator.route){
+        popUpTo(homeCompositeNavigators.latestDealsNavigator.route) {
             saveState = true
         }
         launchSingleTop = true
