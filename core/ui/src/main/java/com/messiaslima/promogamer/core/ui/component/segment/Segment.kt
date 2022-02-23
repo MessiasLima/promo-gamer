@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 
 @Composable
@@ -40,7 +41,8 @@ fun Segment(
 
 data class SegmentItemModel(
     val label: String,
-    val isSelected: Boolean
+    val isSelected: Boolean,
+    val navigator: AppNavigator? = null,
 )
 
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)

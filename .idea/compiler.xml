@@ -14,6 +14,8 @@
       <module name="PromoGamer.feature.home_contract" target="11" />
       <module name="PromoGamer.feature.latest_deals" target="11" />
       <module name="PromoGamer.feature.latest_deals_contract" target="11" />
+      <module name="PromoGamer.feature.latest_deals_games" target="11" />
+      <module name="PromoGamer.feature.latest_deals_games_contract" target="11" />
       <module name="PromoGamer.feature.main" target="11" />
       <module name="PromoGamer.feature.saved_deals" target="11" />
       <module name="PromoGamer.feature.saved_deals_contract" target="11" />

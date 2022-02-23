@@ -34,4 +34,6 @@ dependencies {
     debugImplementation(Compose.uiTestManifest)
     androidTestImplementation(Compose.uiTestJunit4)
 
+    // Modules
+    implementation(project(AppModule.Core.navigation_contract))
 }
