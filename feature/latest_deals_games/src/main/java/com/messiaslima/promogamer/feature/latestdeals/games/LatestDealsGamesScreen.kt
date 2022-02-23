@@ -7,7 +7,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.messiaslima.promogamer.core.ui.theme.PromoGamerTheme
 
-
 @Composable
 fun LatestDealsGamesScreen(mainNavController: NavController) {
     Text(text = "This is latest deals games screen")
@@ -15,7 +14,7 @@ fun LatestDealsGamesScreen(mainNavController: NavController) {
 
 @Preview
 @Composable
-private fun LatestDealsGamesScreenPreview(){
+private fun LatestDealsGamesScreenPreview() {
     PromoGamerTheme {
         val previewNavController = rememberNavController()
         LatestDealsGamesScreen(mainNavController = previewNavController)

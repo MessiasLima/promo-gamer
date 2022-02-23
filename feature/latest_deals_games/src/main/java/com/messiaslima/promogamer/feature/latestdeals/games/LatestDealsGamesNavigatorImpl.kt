@@ -3,7 +3,6 @@ package com.messiaslima.promogamer.feature.latestdeals.games
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
 import com.messiaslima.promogamer.feature.latestdeals.games.contract.LatestDealsGamesNavigator
 import javax.inject.Inject
 
