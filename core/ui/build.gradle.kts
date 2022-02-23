@@ -34,6 +34,11 @@ dependencies {
     debugImplementation(Compose.uiTestManifest)
     androidTestImplementation(Compose.uiTestJunit4)
 
+    // Testing
+    testImplementation(Junit.junit)
+    androidTestImplementation(Testing.ext.junit)
+    androidTestImplementation(Testing.espresso.core)
+
     // Modules
     implementation(project(AppModule.Core.navigation_contract))
 }
