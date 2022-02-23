@@ -111,5 +111,7 @@ dependencies {
     implementation(project(AppModule.Feature.splash))
     implementation(project(AppModule.Feature.home))
     implementation(project(AppModule.Feature.latest_deals))
+    implementation(project(AppModule.Feature.latest_deals_games))
+    implementation(project(AppModule.Feature.latest_deals_products))
     implementation(project(AppModule.Feature.saved_deals))
 }

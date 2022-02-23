@@ -6,12 +6,17 @@ import androidx.navigation.compose.composable
 import com.messiaslima.promogamer.feature.latestdeals.contract.LatestDealsNavigator
 import javax.inject.Inject
 
-class LatestDealsNavigatorImpl @Inject constructor() : LatestDealsNavigator {
-    override val route = "latestdeals"
+class LatestDealsNavigatorImpl @Inject constructor(
+    private val latestDealsCompositeNavigator: LatestDealsCompositeNavigator
+) : LatestDealsNavigator {
+    override val route = "latest_deals"
 
     override fun configure(navGraphBuilder: NavGraphBuilder, navController: NavController) {
         navGraphBuilder.composable(route = route) {
-            LatestDealsScreen()
+            LatestDealsScreen(
+                mainNavController = navController,
+                compositeNavigator = latestDealsCompositeNavigator
+            )
         }
     }
 }

@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.messiaslima.promogamer.core.navigation.contract.AppNavigator
@@ -25,12 +26,14 @@ fun HomeScreen(
         val (navHostWrapper, bottomNavigation) = createRefs()
 
         Box(
-            modifier = Modifier.constrainAs(navHostWrapper) {
-                top.linkTo(parent.top)
-                bottom.linkTo(bottomNavigation.top)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-            },
+            modifier = Modifier
+                .constrainAs(navHostWrapper) {
+                    top.linkTo(parent.top)
+                    bottom.linkTo(bottomNavigation.top)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    height = Dimension.fillToConstraints
+                },
         ) {
             if (mainNavController != null && compositeNavigators != null) {
                 HomeNavHost(
@@ -44,6 +47,7 @@ fun HomeScreen(
         AppBottomNavigation(
             modifier = Modifier.constrainAs(bottomNavigation) {
                 bottom.linkTo(parent.bottom)
+                top.linkTo(navHostWrapper.bottom)
             },
             compositeNavigators = compositeNavigators,
             homeNavController = homeNavController
@@ -63,12 +67,15 @@ private fun performNavigation(
     if (homeNavController.currentDestination?.route == clickedNavigator.route) return
 
     homeNavController.navigate(clickedNavigator.route) {
-        popUpTo(homeCompositeNavigators.latestDealsNavigator.route)
+        popUpTo(homeCompositeNavigators.latestDealsNavigator.route) {
+            saveState = true
+        }
         launchSingleTop = true
+        restoreState = true
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun HomeScreenPreview() {
     PromoGamerTheme {
