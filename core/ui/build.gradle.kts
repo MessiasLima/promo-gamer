@@ -28,4 +28,10 @@ dependencies {
     // Compose
     implementation(Compose.ui)
     implementation(Compose.material)
+    implementation(Compose.uiToolingPreview)
+    implementation(Compose.navigation)
+    implementation(Compose.uiTooling)
+    debugImplementation(Compose.uiTestManifest)
+    androidTestImplementation(Compose.uiTestJunit4)
+
 }

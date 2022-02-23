@@ -68,7 +68,7 @@ private fun performNavigation(
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun HomeScreenPreview() {
     PromoGamerTheme {

@@ -1,4 +1,4 @@
-package com.messiaslima.promogamer.feature.latestdeals.composable
+package com.messiaslima.promogamer.core.ui.component.segment
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
