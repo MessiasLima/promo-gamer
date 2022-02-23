@@ -70,8 +70,11 @@ private fun performNavigation(
     if (homeNavController.currentDestination?.route == clickedNavigator.route) return
 
     homeNavController.navigate(clickedNavigator.route) {
-        popUpTo(homeCompositeNavigators.latestDealsNavigator.route)
+        popUpTo(homeCompositeNavigators.latestDealsNavigator.route){
+            saveState = true
+        }
         launchSingleTop = true
+        restoreState = true
     }
 }
 
