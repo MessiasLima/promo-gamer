@@ -16,7 +16,7 @@ class SplashViewModel @Inject constructor(
 ) : ViewModel() {
     private val retryTrigger = RetryTrigger()
 
-    val uiState = retriableFlow(retryTrigger) {
+    val uiState = retryableFlow(retryTrigger) {
         splashOrchestrator.getStores()
             .map<List<Store>, UiState> { UiState.Success }
             .catch { throwable ->

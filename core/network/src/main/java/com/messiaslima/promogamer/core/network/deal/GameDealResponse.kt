@@ -1,8 +1,8 @@
 package com.messiaslima.promogamer.core.network.deal
 
- import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerializedName
 
- data class GameDealResponse(
+data class GameDealResponse(
     @SerializedName("internalName") var internalName: String? = null,
     @SerializedName("title") var title: String? = null,
     @SerializedName("metacriticLink") var metacriticLink: String? = null,
@@ -22,4 +22,4 @@ package com.messiaslima.promogamer.core.network.deal
     @SerializedName("lastChange") var lastChange: Int? = null,
     @SerializedName("dealRating") var dealRating: String? = null,
     @SerializedName("thumb") var thumb: String? = null
- )
+)

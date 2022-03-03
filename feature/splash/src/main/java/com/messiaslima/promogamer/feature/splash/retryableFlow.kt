@@ -8,15 +8,17 @@ import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.onEach
 
 @FlowPreview
-fun <T> retriableFlow(retryTrigger: RetryTrigger, flowProvider: () -> Flow<T>) =
-    retryTrigger.retryEvent.filter { it }
+fun <T> retryableFlow(retryTrigger: RetryTrigger, flowProvider: () -> Flow<T>) =
+    retryTrigger.retryEvent.filter { it == RetryTrigger.State.RETRYING }
         .flatMapConcat { flowProvider() }
-        .onEach { retryTrigger.retryEvent.value = false }
+        .onEach { retryTrigger.retryEvent.value = RetryTrigger.State.IDLE }
 
 class RetryTrigger {
-    val retryEvent = MutableStateFlow(true)
+    enum class State { RETRYING, IDLE }
+
+    val retryEvent = MutableStateFlow(State.RETRYING)
 
     fun retry() {
-        retryEvent.value = true
+        retryEvent.value = State.RETRYING
     }
 }

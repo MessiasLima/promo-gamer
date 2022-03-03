@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class GameDealServiceImpl @Inject constructor(
     private val cheapSharkService: CheapSharkService,
-): GameDealService {
+) : GameDealService {
     override suspend fun getLatestDeals(): List<GameDeal> {
         val dealsResponse = cheapSharkService.getDeals().parseResponse()
         return dealsResponse.toDomain()

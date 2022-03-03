@@ -1,5 +1,6 @@
 package com.messiaslima.promogamer.core.network.deal
 
+import android.util.Log
 import com.messiaslima.promogamer.domain.GameDeal
 
 fun List<GameDealResponse>?.toDomain(): List<GameDeal> {
@@ -8,6 +9,7 @@ fun List<GameDealResponse>?.toDomain(): List<GameDeal> {
     return mapNotNull { it.toDomain() }
 }
 
+@Suppress("TooGenericExceptionCaught")
 fun GameDealResponse.toDomain(): GameDeal? {
     return try {
         val storeIdInt = requireNotNull(storeId).toInt()
@@ -23,9 +25,9 @@ fun GameDealResponse.toDomain(): GameDeal? {
             isOnSale = requireNotNull(normalPrice) == "1"
         )
     } catch (throwable: Throwable) {
+        Log.e("GameDealResponse", "mapping to domain", throwable)
         null
     }
-
 }
 
 fun parseMetacriticLink(metacriticLink: String?): String? {
