@@ -1,6 +1,8 @@
 package com.messiaslima.promogamer.core.network.di
 
+import com.messiaslima.promogamer.core.network.contract.store.GameDealService
 import com.messiaslima.promogamer.core.network.contract.store.StoreService
+import com.messiaslima.promogamer.core.network.deal.GameDealServiceImpl
 import com.messiaslima.promogamer.core.network.store.StoreServiceImpl
 import dagger.Binds
 import dagger.Module
@@ -12,4 +14,7 @@ import dagger.hilt.components.SingletonComponent
 interface NetworkServicesModule {
     @Binds
     fun bindStoreService(impl: StoreServiceImpl): StoreService
+
+    @Binds
+    fun bindGameDealsService(impl: GameDealServiceImpl): GameDealService
 }
